@@ -4,6 +4,7 @@ import os
 # Check if working directory is a clean directory
 path = os.system('pwd')
 repo = Repo(path)
-print(repo.is_dirty())
-assert not repo.is_dirty()
+if repo.is_dirty():
+    print("This repo is dirty! Do you want to continue ?")
+    input()
 
